@@ -401,7 +401,7 @@ public class DxfEntitiesParse {
                         str = lineList.get(++i);
                         if (DecimalCheckUtil.check(str.trim())) {
                             vertex.setZ(new BigDecimal(str.trim()).setScale(DECIMAL_SIZE, RoundingMode.HALF_UP));
-                            str = lineList.get(++i);
+//                            str = lineList.get(++i); // 这里有bug，会导致跳过 SEQEND 标记的读取
                         }
                         vertices.add(vertex);
                     }
